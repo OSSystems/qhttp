@@ -1,12 +1,10 @@
 TEMPLATE = subdirs
 
-include(../commondir.pri)
-
 SUBDIRS += helloworld
 SUBDIRS += postcollector
 SUBDIRS += basic-server
 
-contains(DEFINES, QHTTP_HAS_CLIENT) {
+equals(ENABLE_QHTTP_CLIENT, "1") {
     SUBDIRS += keep-alive
 }
 
